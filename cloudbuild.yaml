@@ -14,8 +14,7 @@ steps:
   - id: trivy-security-scan
     name: aquasec/trivy:0.58.1
     entrypoint: trivy
-    args: [fs, --exit-code=1, --severity=HIGH,CRITICAL, --ignore-unfixed, .]
-  - id: build-image
+    args: ['fs', '--exit-code=1', '--severity=HIGH,CRITICAL', '--ignore-unfixed', '.']  - id: build-image
     name: gcr.io/cloud-builders/docker
     args: [build, -t, '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/tastebite:$COMMIT_SHA', -t, '${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/tastebite:latest', .]
   - id: push-commit-image
