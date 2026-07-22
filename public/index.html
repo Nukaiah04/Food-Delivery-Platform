@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TasteBite | Food delivered fresh</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="authView" class="auth-shell">
+    <section class="auth-hero"><div><span class="brand">Taste<span>Bite</span></span><h1>Good food,<br>delivered with joy.</h1><p>Your favourite local flavours are only a few taps away.</p></div><div class="hero-food">🍕 <span>🥗</span> 🍔</div></section>
+    <section class="auth-panel"><form id="authForm" class="auth-card"><span class="eyebrow">WELCOME TO TASTEBITE</span><h2 id="authTitle">Sign in to order</h2><p class="muted" id="authText">New here? <button type="button" class="link-button" id="toggleAuth">Create an account</button></p><label id="nameLabel" class="hidden">Full name<input id="name" type="text" placeholder="Your name"></label><label>Email address<input id="email" type="email" required placeholder="you@example.com"></label><label>Password<input id="password" type="password" required minlength="6" placeholder="••••••••"></label><button class="primary" id="authSubmit">Sign in</button><p id="authError" class="error" role="alert"></p><div class="demo-note">Demo: <b>demo@tastebite.in</b> / <b>welcome123</b></div></form></section>
+  </div>
+  <div id="appView" class="hidden">
+    <header><a class="brand" href="#">Taste<span>Bite</span></a><nav><button class="nav-link active" data-target="menuSection">Menu</button><button class="nav-link" data-target="ordersSection">My orders</button></nav><div class="header-actions"><span id="welcome"></span><button id="cartButton" class="cart-button">Cart <b id="cartCount">0</b></button><button id="logout" class="logout">Log out</button></div></header>
+    <main><section class="intro"><div><span class="eyebrow">DELIVERED IN 30 MINUTES</span><h1>What are you<br><i>craving?</i></h1><p>Handpicked meals, made fresh and delivered to your door.</p></div><div class="offer">FREE DELIVERY<br><strong>on orders above ₹299</strong></div></section>
+    <section id="menuSection"><div class="section-heading"><div><h2>Explore our menu</h2><p class="muted" id="restaurantCount"></p></div><div id="categories" class="categories"></div></div><div id="menuGrid" class="menu-grid"></div></section>
+    <section id="ordersSection" class="orders hidden"><h2>Your recent orders</h2><div id="ordersList"><p class="muted">You have not placed any orders yet.</p></div></section></main>
+  </div>
+  <aside id="cartDrawer" class="drawer" aria-hidden="true"><div class="drawer-head"><h2>Your order</h2><button id="closeCart" class="icon-button">×</button></div><div id="cartItems" class="cart-items"></div><div id="cartEmpty" class="empty">Your cart is empty. Add something delicious!</div><div id="cartFooter" class="cart-footer hidden"><div class="cart-coupons"><b>Available offers</b><span>WELCOME50: &#8377;50 off above &#8377;299</span><span>SAVE100: &#8377;100 off above &#8377;699</span><span>UPI 5% off � Card 10% off</span></div><div class="price-row"><span>Subtotal</span><b id="subtotal">₹0</b></div><div class="price-row"><span>Delivery</span><b id="delivery">₹0</b></div><div class="total"><span>Total</span><b id="total">₹0</b></div><button id="checkout" class="primary">Proceed to payment</button></div></aside><div id="overlay" class="overlay"></div>
+  <div id="checkoutModal" class="modal hidden"><form id="checkoutForm" class="modal-card"><button type="button" id="closeCheckout" class="icon-button close-modal">�</button><span class="eyebrow">CHECKOUT</span><h2>Where should we deliver?</h2><label>Delivery address<textarea id="address" required placeholder="House / flat number, street, area, city"></textarea></label><label>Coupon code<input id="coupon" type="text" maxlength="20" placeholder="Try WELCOME50 or SAVE100"></label><p class="coupon-note">WELCOME50: &#8377;50 off above &#8377;299 � SAVE100: &#8377;100 off above &#8377;699</p><label>Payment method<select id="payment"><option>Cash on delivery</option><option>UPI</option><option>Credit / Debit card</option></select></label><p id="paymentOffer" class="payment-offer">Cash on delivery: no payment discount</p><div class="checkout-bill"><div><span>Items total</span><b id="billSubtotal">&#8377;0</b></div><div><span>Delivery fee</span><b id="billDelivery">&#8377;0</b></div><div><span>Coupon saving</span><b id="billCoupon">-&#8377;0</b></div><div><span>Payment saving</span><b id="billPayment">-&#8377;0</b></div><div class="bill-total"><span>Payable amount</span><b id="billTotal">&#8377;0</b></div></div><button id="placeOrderButton" class="primary" type="submit"><span id="paymentAction">Pay &amp; confirm order</span> <span id="checkoutTotal"></span></button><p id="checkoutError" class="error"></p></form></div>
+  <div id="toast" class="toast"></div><script src="app.js"></script>
+</body></html>
