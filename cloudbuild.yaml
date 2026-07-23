@@ -57,7 +57,7 @@ steps:
         gcloud compute ssh "${_VM_NAME}" \
           --zone="${_VM_ZONE}" \
           --quiet \
-          --command="sudo /opt/tastebite/deploy-container.sh ${IMAGE}"
+          --command="sudo /opt/tastebite/deploy-container.sh $$IMAGE"
 
 images:
   - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE_NAME}:$COMMIT_SHA
