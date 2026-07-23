@@ -27,7 +27,7 @@ steps:
   - id: trivy-security-scan
     name: aquasec/trivy:0.58.1
     entrypoint: trivy
-    args: [fs, --exit-code=1, --severity=HIGH,CRITICAL, --ignore-unfixed, .]
+    args: ['fs', '--exit-code=1', '--severity=HIGH,CRITICAL', '--ignore-unfixed', '.']
 
   - id: build-docker-image
     name: gcr.io/cloud-builders/docker
